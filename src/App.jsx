@@ -22,41 +22,42 @@ import "./App.css";
 function App() {
   return (
     <>
-    <Router>
+      <Router>
 
-      <Component/>
-      <Navbar/>
+        <Component />
+        <Navbar />
 
-      <Routes>
+        <Routes>
 
-        <Route path="/ProductCard" element={<ProductCard />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path="/Necklaces" element={<Necklaces />} />
-        <Route path="/Earrings" element={<Earrings />} />
-        <Route path="/Rings" element={<Rings />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/product/:id" element={<ProductDetails />} />
-        <Route path="/Bracelets" element={<Bracelets />} />
-        <Route path="/Cartpage" element={<Cartpage />} />
-        
-          
+          <Route path="/ProductCard" element={<ProductCard />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/Necklaces" element={<Necklaces />} />
+          <Route path="/Earrings" element={<Earrings />} />
+          <Route path="/Rings" element={<Rings />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
+          <Route path="/Bracelets" element={<Bracelets />} />
+          <Route path="/Cartpage" element={<Cartpage />} />
+
+
           <Route path="/Home" element={<>
             <Home />
-            <HomeItems/>
-            </>} />
+            <HomeItems />
+          </>} />
 
           <Route path="/" element={
             <>
-            <HomeItems />
-            
+               <Home />
+              <HomeItems />
+
             </>
           } />
 
 
 
 
-      </Routes>
-    </Router>
+        </Routes>
+      </Router>
     </>
   );
 }
