@@ -17,7 +17,7 @@ import Navbar from './Navbar';
 
 export const Home = () => {
     const sandeepsliders = [
-        { Image: Bannerimage }, { Image: Bannerimage1 },{Image: Bannerimage2}
+        { Image: Bannerimage }, { Image: Bannerimage1 }, { Image: Bannerimage2 }
     ]
     const [current, setCurrent] = useState(0);
     useEffect(() => {
@@ -30,8 +30,8 @@ export const Home = () => {
     return (
         <>
             <div className='secondImage'>
-                  <Component/>
-                   <PopUp/>  
+                {/* <Component/> */}
+                <PopUp />
                 <ul>
                     <li style={{ listStyle: 'none' }}>
                         <img src={sandeepsliders[current].Image} alt="slider" />
@@ -41,7 +41,7 @@ export const Home = () => {
             </div>
 
 
-            
+
 
             <div className='quote'>
                 <p>“Where Shine Meets Savings ------</p>
@@ -57,18 +57,18 @@ export const Home = () => {
                 <img src={Banner2} alt="Product 2" />
                 <img src={Banner3} alt="Product 3" />
             </div>
-      
+
             <div className="marquee-container">
                 <marquee behavior="scroll" direction="left" scrollamount="9" className="marquee-text">
-                    Limited Stock Available – Order Now!  &nbsp;  &nbsp;         
-                     ✨ Flat 80% Discount ✨
+                    Limited Stock Available – Order Now!  &nbsp;  &nbsp;
+                    ✨ Flat 80% Discount ✨
                 </marquee>
 
                 <marquee behavior="scroll" direction="left" scrollamount="7.5" className="marquee-gif">
                     <img src={Marque} alt="GIF" />
                 </marquee>
             </div>
-        
+
         </>
     );
 }

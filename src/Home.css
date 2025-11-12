@@ -270,8 +270,6 @@
 }
 
 
-
-/* 🖼️ Second Banner Image Section */
 .secondImage {
   position: relative;
   width: 100%;
@@ -279,38 +277,48 @@
   margin: 20px auto 90px;
   border-radius: 18px;
   overflow: hidden;
-  height:auto;
+  height: auto;
   margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Style the <ul> & <li> inside it */
 .secondImage ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  width: 100%;
 }
 
 .secondImage li {
   width: 100%;
 }
 
-/* The actual banner image */
+/* Main Image Styling */
 .secondImage img {
   display: block;
   width: 100%;
   height: auto;
   border-radius: 18px;
-  object-fit: cover;
+  object-fit: contain; /* changed from cover → contain */
+  object-position: center;
   transition: opacity 0.8s ease-in-out;
 }
 
-/* ✅ Responsive Design */
+/* ===== Large Tablet / Laptop ===== */
 @media (max-width: 1024px) {
   .secondImage {
     max-width: 95%;
+    margin: 18px auto 70px;
+  }
+
+  .secondImage img {
+    border-radius: 16px;
   }
 }
 
+/* ===== Tablet ===== */
 @media (max-width: 768px) {
   .secondImage {
     max-width: 90%;
@@ -319,16 +327,35 @@
 
   .secondImage img {
     border-radius: 15px;
+    width: 100%;
+    height: auto; /* Let height auto adjust */
   }
 }
 
-@media (max-width: 480px) {
+/* ===== Mobile ===== */
+@media (max-width: 576px) {
   .secondImage {
     max-width: 95%;
-    margin: 10px auto 50px;
+    margin: 12px auto 50px;
+  }
+
+  .secondImage img {
+    border-radius: 14px;
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* ===== Small Mobile ===== */
+@media (max-width: 400px) {
+  .secondImage {
+    max-width: 98%;
+    margin: 10px auto 40px;
   }
 
   .secondImage img {
     border-radius: 12px;
+    width: 100%;
+    height: auto;
   }
 }
