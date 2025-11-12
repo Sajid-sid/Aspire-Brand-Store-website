@@ -1,0 +1,132 @@
+.necklaces-page h2 {
+  text-align: center;
+  padding:60px ;
+  background-color: #fdfdfd;
+  margin-top: 0px;
+}
+
+.product-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+ 
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 15px;
+  width: 220px;
+  text-align: center;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.product-card h3 {
+  margin: 10px 0 5px;
+  font-size: 1.1rem;
+}
+
+.product-card .brand {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.price {
+  margin: 10px 0;
+}
+
+.price .actual {
+  text-decoration: line-through;
+  color: gray;
+  margin-right: 6px;
+}
+
+.price .discount {
+  color: #d9534f;
+  font-weight: bold;
+}
+
+button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+/* 🔹 UPI Section Styling */
+.upi-section {
+  background: #fffafc;
+  border-radius: 15px;
+  padding: 25px;
+  margin-top: 40px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  width: px;
+}
+
+
+.upi-section h3 {
+  font-size: 1.4rem;
+  color: #d81b60;
+  margin-bottom: 10px;
+}
+
+.upi-section p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* 🔸 Image container */
+.upi-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+/* 🔸 Individual image styling */
+.upi-logos img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 🔸 Hover animation */
+
+/* 🔸 UPI ID Text */
+.upi-id {
+  font-size: 1rem;
+  color: #333;
+}
+
+.upi-id strong {
+  color: #d81b60;
+}
+
+
+
+
+
+

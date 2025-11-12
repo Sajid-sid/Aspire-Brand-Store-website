@@ -1,0 +1,323 @@
+/* 🌟 Overall Page Layout */
+.pd-page {
+  background-color: #fafafa;
+  padding: 60px ;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: "Poppins", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* 📦 Container */
+.pd-container {
+  width: 100%;
+  max-width: 1200px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  padding: 25px 30px;
+  transition: all 0.3s ease;
+}
+
+/* 🔙 Back Button */
+.pd-back {
+  border: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 30px;
+  margin-top: 50px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.pd-back:hover {
+  color: white
+}
+
+/* 🧩 Grid Layout */
+.pd-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* 🖼️ Product Media Section */
+.pd-media {
+  text-align: center;
+}
+.pd-image {
+  width: 100%;
+  height: 700px; /* increased from 600px */
+  object-fit: contain; /* changed from cover to contain */
+  border-radius: 14px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease;
+  background-color: #fff; /* prevents black bars if aspect ratio differs */
+}
+
+
+.pd-image:hover {
+  transform: scale(1.03);
+}
+
+/* 📸 Thumbnails */
+.pd-thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.pd-thumb {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.pd-thumb:hover {
+  border-color: blue;
+}
+
+.pd-thumb.active {
+  border-color: yellow;
+  transform: scale(1.05);
+}
+
+/* 📄 Product Info Section */
+.pd-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.pd-title {
+  font-size: 26px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.pd-brand {
+  font-size: 15px;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+/* 💰 Price Section */
+.pd-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.pd-price {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.pd-actual {
+  color: blue;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.pd-discount {
+  color:red;
+  font-size: 15px;
+  text-decoration: line-through;
+  margin-left: 6px;
+}
+
+/* ❤️ Like + Share Buttons */
+.pd-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pd-like,
+.pd-share {
+  background: #f3f3f3;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.pd-like:hover,
+.pd-share:hover {
+  background: #e63946;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.pd-like.liked {
+  background: #e63946;
+  color: #fff;
+}
+
+/* ⭐ Rating Section */
+.pd-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  margin-bottom: 18px;
+}
+
+.pd-star {
+  color: #ccc;
+  cursor: pointer;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.pd-star.filled {
+  color: #ffb400;
+}
+
+.pd-reviews {
+  font-size: 14px;
+  color: #555;
+}
+
+/* 📝 Description */
+.pd-desc h3 {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.pd-desc p {
+  color: #555;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* 🛒 Footer Buttons */
+.pd-footer {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.pd-addcart,
+.pd-buy {
+  flex: 1;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pd-addcart {
+  background: #e63946;
+  color: white;
+}
+
+.pd-addcart:hover {
+  background: #d62839;
+  transform: scale(1.03);
+}
+
+.pd-buy {
+  background: #1b4332;
+  color: white;
+}
+
+.pd-buy:hover {
+  background: #0d3b26;
+  transform: scale(1.03);
+}
+
+/* 📱 RESPONSIVE DESIGN */
+
+/* ✅ Tablets */
+@media (max-width: 992px) {
+  .pd-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .pd-image {
+    height: 380px;
+  }
+
+  .pd-container {
+    padding: 20px;
+  }
+
+  .pd-footer {
+    flex-direction: column;
+  }
+}
+
+/* ✅ Mobile Devices */
+@media (max-width: 600px) {
+  .pd-page {
+    padding: 20px 10px;
+  }
+
+  .pd-container {
+    padding: 15px;
+  }
+
+  .pd-title {
+    font-size: 22px;
+  }
+
+  .pd-image {
+    height: 320px;
+  }
+
+  .pd-thumb {
+    width: 60px;
+    height: 60px;
+  }
+
+  .pd-addcart,
+  .pd-buy {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .pd-actions {
+    gap: 8px;
+  }
+}
+
+/* ✅ Small Phones */
+@media (max-width: 400px) {
+  .pd-title {
+    font-size: 20px;
+  }
+
+  .pd-image {
+    height: 270px;
+  }
+
+  .pd-thumb {
+    width: 50px;
+    height: 50px;
+  }
+
+  .pd-addcart,
+  .pd-buy {
+    font-size: 14px;
+  }
+}

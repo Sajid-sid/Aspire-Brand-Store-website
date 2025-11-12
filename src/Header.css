@@ -1,0 +1,11 @@
+
+.banner {
+  display: flex;
+  flex-direction: row;
+  color: #555;
+  gap: 30px;
+  align-items: center;
+  font-weight: 600;
+  margin-left: 300px;
+
+}

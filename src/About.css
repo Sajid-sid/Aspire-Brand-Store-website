@@ -1,0 +1,26 @@
+.Mainfooter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:100px;
+    margin-left: 10px;
+}
+
+.footer-title {
+    color:rgba(14, 134, 68, 0.559)
+}
+
+
+.Items p:hover {
+  background-color: #fec38a;
+  color: #fff;
+  width: 150px;
+  cursor:pointer;
+}
+
+.ourservices p:hover {
+  background-color: #fec38a;
+  color: #fff;
+  width: 200px;
+  cursor:pointer;
+}

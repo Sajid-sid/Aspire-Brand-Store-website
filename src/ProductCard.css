@@ -1,0 +1,212 @@
+body {
+  padding-top: 80px; /* adjust depending on header + banner height */
+}
+.product-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.product-image {
+  width: 100%;
+  border-radius: 10px;
+  height: 220px;
+  object-fit: cover;
+}
+
+.price-line {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.actual-price {
+  text-decoration: line-through;
+  color: #888;
+  margin-right: 5px;
+}
+
+.discount-price {
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+.save-text {
+  color: green;
+  font-weight: 500;
+  margin-left: 5px;
+}
+
+.add-btn {
+  background-color: #ff4081;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add-btn:hover {
+  background-color:green;
+}
+
+
+.rating-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px 0;
+}
+
+.star {
+  color: #ccc;
+  font-size: 1rem;
+  margin-right: 2px;
+}
+
+.star.filled {
+  color: #f4b400; /* golden yellow */
+}
+
+.reviews {
+  font-size: 0.85rem;
+  color: #666;
+  margin-left: 5px;
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.heart-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #ccc;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 6px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.heart-icon:hover {
+  color: #ff4d4d;
+  transform: scale(1.1);
+}
+
+.heart-icon.liked {
+  color: #ff0000;
+}
+
+.product-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container {
+  position: relative;
+}
+
+.product-image {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* ❤️ Heart Icon */
+.heart-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 22px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.heart-icon.liked {
+  color: red;
+}
+
+/* 🔗 Share Button Below Heart */
+.share-button {
+  position: absolute;
+  top: 50px; /* Position below heart */
+  right: 10px;
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 6px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.share-button:hover {
+  background-color:blue;
+}
+
+/* Share Icon Styling */
+.share-icon {
+  width: 18px;
+  height: 18px;
+  color: #03619E;
+}
+
+/* Popup Styling */
+.popup-message {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* 💖 Popup message */
+.popup-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.95);
+  color: #ff3366;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: fadeOut 1.5s ease forwards;
+  font-size: 0.9rem;
+  z-index: 20;
+}
+
+/* Smooth fade + move animation */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  80% {
+    opacity: 1;
+    transform: translate(-50%, -70%) scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -80%) scale(0.9);
+  }
+}
