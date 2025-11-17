@@ -1,37 +1,53 @@
 import React, { useEffect, useState } from "react";
-import "./PopUp.css"; // popup styles
+import { useNavigate } from "react-router-dom";
+import ExciteImage from './images/ExcitementImage.webp';
+import "./PopUp.css";
 
 export default function PopUp() {
   const [showPopup, setShowPopup] = useState(false);
+  const navigate = useNavigate();
 
-  // 🕒 Show popup automatically after 3 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowPopup(true);
-    }, 3000); // 3 seconds delay
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
 
-  // 🧹 Close popup
   const closePopup = () => {
     setShowPopup(false);
   };
 
+  const goToOffers = () => {
+    setShowPopup(false);
+    navigate("/offers"); // 👉 your route for offer page
+  };
+
   return (
-    <div className="popup-container">
-      {/* ✅ Popup Message */}
+    <>
       {showPopup && (
         <div className="popup-overlay">
           <div className="popup-box">
-            <h3>🎉 Special Offer!</h3>
-            <p>Get 70% OFF on your first purchase 💎</p>
-            <button className="close-btn" onClick={closePopup}>
-              Close
-            </button>
+
+            {/* Advertisement Image */}
+            <img
+              src={ExciteImage}
+              alt="Advertisement"
+              className="popup-ad-img"
+            />
+
+            {/* Scrolling Offer Bar */}
+            <div className="scroll-offer-bar" onClick={goToOffers}>
+              <div className="scroll-text">
+                🔥 Mega Sale! 70% OFF — Limited Time Offer — Click to Explore Deals! 🔥
+              </div>
+            </div>
+
+            <button className="close-btn" onClick={closePopup}>✖</button>
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 }
