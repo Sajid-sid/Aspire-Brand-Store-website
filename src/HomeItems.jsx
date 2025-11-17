@@ -81,7 +81,7 @@ const Necklace = [
     {
         id: 12, name: "Earrings with simple style",
         actualPrice: 1089,
-        price: 190,
+        price: 200,
         image: Ear2
     }
 ];
