@@ -41,7 +41,7 @@
 }
 
 .heart.outlined {
-  color: #888;
+  color:red;
 }
 
 .heart:hover {
@@ -126,7 +126,6 @@
   
   
 }
-
 
 
 

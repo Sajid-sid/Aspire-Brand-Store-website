@@ -5,13 +5,13 @@ import "./Cartpage.css";
 export default function CartPage() {
   const [cartItems, setCartItems] = useState([]);
 
-  // 🧩 Load cart initially
+  // Load cart initially
   useEffect(() => {
     const items = JSON.parse(localStorage.getItem("cartItems")) || [];
     setCartItems(items);
   }, []);
 
-  // 🧩 Listen for "cartUpdated" event from ProductCard
+  // Listen for cart updates
   useEffect(() => {
     const updateCart = () => {
       const items = JSON.parse(localStorage.getItem("cartItems")) || [];
@@ -19,14 +19,10 @@ export default function CartPage() {
     };
 
     window.addEventListener("cartUpdated", updateCart);
-
-    // cleanup listener when leaving the page
-    return () => {
-      window.removeEventListener("cartUpdated", updateCart);
-    };
+    return () => window.removeEventListener("cartUpdated", updateCart);
   }, []);
 
-  // ➕ Increase quantity
+  // Increase quantity
   const incrementQty = (id) => {
     const updated = cartItems.map((item) =>
       item.id === id ? { ...item, qty: item.qty + 1 } : item
@@ -35,7 +31,7 @@ export default function CartPage() {
     localStorage.setItem("cartItems", JSON.stringify(updated));
   };
 
-  // ➖ Decrease quantity
+  // Decrease quantity
   const decrementQty = (id) => {
     const updated = cartItems
       .map((item) => {
@@ -46,18 +42,25 @@ export default function CartPage() {
         return item;
       })
       .filter(Boolean);
+
     setCartItems(updated);
     localStorage.setItem("cartItems", JSON.stringify(updated));
   };
 
-  // ❌ Remove item
+  // Remove item
   const handleRemove = (id) => {
     const updated = cartItems.filter((item) => item.id !== id);
     setCartItems(updated);
     localStorage.setItem("cartItems", JSON.stringify(updated));
   };
 
-  // 💰 Calculate total
+  // ⭐ Proceed to Payment (individual item)
+  const handlePayment = (item) => {
+    alert(`Proceeding to payment for: ${item.name}`);
+    // Navigate to your payment page later if needed
+  };
+
+  // Total Price
   const totalPrice = cartItems.reduce(
     (sum, item) => sum + item.price * item.qty,
     0
@@ -66,7 +69,7 @@ export default function CartPage() {
   return (
     <div className="cart-page">
       <div className="cart">
-      <h2>Your Shopping Cart 🛒.</h2>
+        <h2>Your Shopping Cart 🛒</h2>
       </div>
 
       {cartItems.length === 0 ? (
@@ -77,6 +80,7 @@ export default function CartPage() {
             {cartItems.map((item) => (
               <div className="cart-item" key={item.id}>
                 <img src={item.img} alt={item.name} className="cart-img" />
+
                 <div className="item-details">
                   <h4>{item.name}</h4>
                   <p className="brand">{item.brand}</p>
@@ -90,12 +94,22 @@ export default function CartPage() {
 
                   <p>Subtotal: ₹{(item.price * item.qty).toFixed(2)}</p>
 
-                  <button
-                    className="remove-btn"
-                    onClick={() => handleRemove(item.id)}
-                  >
-                    Remove
-                  </button>
+                  {/* ⭐ Buttons Group */}
+                  <div className="btn-group">
+                    <button
+                      className="remove-btn"
+                      onClick={() => handleRemove(item.id)}
+                    >
+                      Remove
+                    </button>
+
+                    <button
+                      className="payment-btn"
+                      onClick={() => handlePayment(item)}
+                    >
+                      Proceed to Payment
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}
