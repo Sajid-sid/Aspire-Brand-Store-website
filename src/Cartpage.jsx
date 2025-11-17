@@ -22,22 +22,23 @@ export default function CartPage() {
     return () => window.removeEventListener("cartUpdated", updateCart);
   }, []);
 
-  // Increase quantity
+  // ⭐ Increase quantity
   const incrementQty = (id) => {
     const updated = cartItems.map((item) =>
       item.id === id ? { ...item, qty: item.qty + 1 } : item
     );
     setCartItems(updated);
     localStorage.setItem("cartItems", JSON.stringify(updated));
+    window.dispatchEvent(new Event("cartUpdated"));
   };
 
-  // Decrease quantity
+  // ⭐ Decrease quantity
   const decrementQty = (id) => {
     const updated = cartItems
       .map((item) => {
         if (item.id === id) {
           if (item.qty > 1) return { ...item, qty: item.qty - 1 };
-          return null;
+          return null; // remove if qty becomes 0
         }
         return item;
       })
@@ -45,22 +46,23 @@ export default function CartPage() {
 
     setCartItems(updated);
     localStorage.setItem("cartItems", JSON.stringify(updated));
+    window.dispatchEvent(new Event("cartUpdated"));
   };
 
-  // Remove item
+  // ⭐ Remove item
   const handleRemove = (id) => {
     const updated = cartItems.filter((item) => item.id !== id);
     setCartItems(updated);
     localStorage.setItem("cartItems", JSON.stringify(updated));
+    window.dispatchEvent(new Event("cartUpdated"));
   };
 
-  // ⭐ Proceed to Payment (individual item)
+  // ⭐ Proceed to Payment (individual)
   const handlePayment = (item) => {
     alert(`Proceeding to payment for: ${item.name}`);
-    // Navigate to your payment page later if needed
   };
 
-  // Total Price
+  // ⭐ Total Price
   const totalPrice = cartItems.reduce(
     (sum, item) => sum + item.price * item.qty,
     0
@@ -94,7 +96,6 @@ export default function CartPage() {
 
                   <p>Subtotal: ₹{(item.price * item.qty).toFixed(2)}</p>
 
-                  {/* ⭐ Buttons Group */}
                   <div className="btn-group">
                     <button
                       className="remove-btn"

@@ -4,7 +4,7 @@
   top: 0;
   z-index: 100;
   background-color: #fff;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   width: 100%;
 }
 
@@ -12,11 +12,12 @@
 .nav-container {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 80px;
+  gap: 12px;
 }
 
 /* ===== Logo ===== */
@@ -24,9 +25,8 @@
   width: 150px;
   height: auto;
   object-fit: contain;
-  transition: transform 0.3s ease;
-  width:0.3s ease;
-  margin-left: -40px;
+  transition: transform 0.25s ease;
+  margin-left: 0;
 }
 
 .logo img:hover {
@@ -36,10 +36,11 @@
 /* ===== Nav Links ===== */
 .nav-links {
   display: flex;
-  gap: 15px;
+  gap: 16px;
   align-items: center;
 }
 
+/* Use NavLink styling target if needed */
 .nav-links a {
   text-decoration: none;
   color: #333;
@@ -47,7 +48,7 @@
   font-size: 16px;
   padding: 8px 12px;
   border-radius: 6px;
-  transition: all 0.3s ease;
+  transition: all 0.18s ease;
 }
 
 .nav-links a:hover {
@@ -56,24 +57,24 @@
 
 nav a.active {
   color: #000;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 /* ===== Search Bar ===== */
 .search-bar {
   display: flex;
   align-items: center;
-  border: 1px solid #d1d5db;
-  border-radius: 50px;
-  padding: 6px 14px;
-  width: 200px;
-  height: 36px;
+  border: 1px solid #e3e6ea;
+  border-radius: 999px;
+  padding: 6px 12px;
+  width: 220px;
+  height: 38px;
   background-color: #fafafa;
-  transition: all 0.3s ease;
+  transition: all 0.18s ease;
 }
 
 .search-bar input {
-  width: 85%;
+  width: 100%;
   border: none;
   outline: none;
   background: transparent;
@@ -85,28 +86,33 @@ nav a.active {
   font-size: 18px;
   color: #555;
   cursor: pointer;
+  margin-left: 8px;
 }
 
 /* ===== Icons ===== */
 .icon-group {
   display: flex;
   align-items: center;
-  gap: 1.4rem;
+  gap: 1rem;
 }
 
 .icon {
   color: #333;
   font-size: 1.4rem;
-  transition: all 0.3s ease;
-  display: flex;
+  transition: all 0.18s ease;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  position: relative;
 }
 
-.icon:hover {
-  color: #b88e2f;
-  transform: scale(1.1);
+/* Cart icon wrapper to position badge relative to it */
+.cart-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ===== Hamburger ===== */
@@ -119,57 +125,80 @@ nav a.active {
   font-size: 1.5rem;
 }
 
-/* ========================================= */
-/* ===== Responsive Design ===== */
-/* ========================================= */
+/* ===== Cart Count Badge ===== */
+/* Small badge positioned at top-right of .cart-icon */
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: #e63946;
+  color: white;
+  padding: 0 6px;
 
-/* ===== Tablets (≤ 1024px) ===== */
+  height: 15px;
+  line-height: 18px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+/* ===== Tablets (<= 1024px) ===== */
 @media (max-width: 1024px) {
   .nav-container {
-    padding: 0 1.2rem;
+    padding: 0 1rem;
   }
 
-  
-
-  /* ===== Tablets (≤ 1024px) ===== */
-@media (max-width: 1024px) {
   .logo img {
-    width: 130px; /* slightly smaller */
-    margin-left: 3px;
+    width: 130px;
   }
-}
 
   .nav-links a {
     font-size: 15px;
   }
+
+  .search-bar {
+    width: 180px;
+  }
 }
 
-/* ===== Mobiles (≤ 768px) ===== */
+/* ===== Mobile (<= 768px) ===== */
 @media (max-width: 768px) {
   .nav-container {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-between;
-    padding: 0 1rem;
-    height:100px;
+    padding: 0 0.875rem;
+    height: 64px;
+    gap: 8px;
   }
 
   .hamburger {
-    display: block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  /* Hide nav links initially */
+  /* Hide horizontal nav links; show as full-screen dropdown when active */
   .nav-links {
+    display: none; /* hidden by default */
     position: absolute;
-    top: 80px;
+    top: 64px;
     left: 0;
     width: 100%;
     flex-direction: column;
     background: #fff;
     border-top: 1px solid #eee;
-    padding: 1rem 0;
-    display: none;
+    padding: 12px 0;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    z-index: 90;
   }
 
+  /* When .nav-links has .active class (from JS), show it */
   .nav-links.active {
     display: flex;
   }
@@ -177,62 +206,65 @@ nav a.active {
   .nav-links a {
     width: 100%;
     text-align: center;
-    padding: 10px;
+    padding: 10px 16px;
+    font-size: 15px;
+    border-radius: 0;
   }
 
-  /* ✅ MOBILE VERSION (≤768px) — show only the icon */
-@media (max-width: 768px) {
+  /* Compact search: show only icon */
   .search-bar {
-    border: none;
-    background: none;
     width: auto;
     padding: 0;
-    margin: 0;
+    border: none;
+    background: transparent;
   }
 
   .search-bar input {
-    display: none; /* Hide input */
+    display: none;
   }
 
   .search-bar .search-icon {
-    font-size: 22px;
+    font-size: 20px;
     color: #333;
+    margin: 0;
   }
-}
-  
 
+  /* Icon group behavior on mobile */
   .icon-group {
-    order: 2;
-    width: 100%;
-    justify-content: center;
-    margin-top: -50px;
+    gap: 10px;
   }
 
-  /* ===== Mobiles (≤ 768px) ===== */
-@media (max-width: 768px) {
   .logo img {
-    width: 120px; /* smaller for mobile */
+    width: 120px;
   }
 }
-}
 
-/* ===== Small Mobiles (≤ 480px) ===== */
+/* ===== Small Mobile (<= 480px) ===== */
 @media (max-width: 480px) {
-  /* ===== Small Mobiles (≤ 480px) ===== */
-@media (max-width: 480px) {
+  .nav-container {
+    padding: 0 0.6rem;
+    height: 60px;
+  }
+
   .logo img {
-    width: 100px; /* compact for very small screens */
-    margin-left: 3px;
+    width: 100px;
   }
 
   .icon {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
-
 
   .nav-links a {
     font-size: 14px;
-    padding: 8px 0;
+    padding: 10px 12px;
   }
-}
+
+  .cart-count {
+    top: 4px;
+    right: 6px;
+    font-size: 10px;
+    min-width: 10px;
+    height: 1px;
+    line-height: 8px;
+  }
 }
