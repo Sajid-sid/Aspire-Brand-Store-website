@@ -14,7 +14,6 @@ import Home from "./Home";
 import HomeItems from "./HomeItems";
 import OffersPage from "./Offerspage";
 import Notifications from './Notifications'
-import Tracking from './Trackingpage';
 import "./App.css";
 
 
@@ -39,7 +38,6 @@ function App() {
           <Route path="/Cartpage" element={<Cartpage />} />
           <Route path="/offers" element={<OffersPage />} />
           <Route path="/Notifications" element={<Notifications/>} />
-          <Route path="/Trackingpage" element={<Tracking />} />
           <Route path="/Home" element={<>
             <Home />
             <HomeItems />
