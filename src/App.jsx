@@ -14,7 +14,11 @@ import Home from "./Home";
 import HomeItems from "./HomeItems";
 import OffersPage from "./OffersPage";
 import Notifications from './Notifications'
+<<<<<<< Updated upstream
 import Tracking from './Trackingpage';
+=======
+import Tracking from './TrackingPage';
+>>>>>>> Stashed changes
 import "./App.css";
 
 
@@ -38,7 +42,11 @@ function App() {
           <Route path="/Bracelets" element={<Bracelets />} />
           <Route path="/Cartpage" element={<Cartpage />} />
           <Route path="/offers" element={<OffersPage />} />
+<<<<<<< Updated upstream
           <Route path="/Notifications" element={<Notifications />} />
+=======
+          <Route path="/Notifications" element={<Notifications/>} />
+>>>>>>> Stashed changes
           <Route path="/Trackingpage" element={<Tracking />} />
           <Route path="/Home" element={<>
             <Home />
