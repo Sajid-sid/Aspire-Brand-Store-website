@@ -8,16 +8,15 @@ import About from "./About";
 import Cartpage from "./Cartpage";
 import ProductDetails from "./ProductDetails";
 import Bracelets from "./Bracelets";
-import Header from "./Header";
 import Component from "./Component";
 import Navbar from "./Navbar";
-import PopUp from "./PopUp";
-
 import Home from "./Home";
 import HomeItems from "./HomeItems";
-
-
+import OffersPage from "./OffersPage";
+import Notifications from './Notifications'
+import Tracking from './Trackingpage';
 import "./App.css";
+
 
 function App() {
   return (
@@ -38,8 +37,9 @@ function App() {
           <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/Bracelets" element={<Bracelets />} />
           <Route path="/Cartpage" element={<Cartpage />} />
-
-
+          <Route path="/offers" element={<OffersPage />} />
+          <Route path="/Notifications" element={<Notifications />} />
+          <Route path="/Trackingpage" element={<Tracking />} />
           <Route path="/Home" element={<>
             <Home />
             <HomeItems />
@@ -47,7 +47,7 @@ function App() {
 
           <Route path="/" element={
             <>
-               <Home />
+              <Home />
               <HomeItems />
 
             </>

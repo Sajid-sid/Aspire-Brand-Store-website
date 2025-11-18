@@ -73,7 +73,7 @@ const Navbar = () => {
           <NavLink to="/Cartpage" className="icon" onClick={() => setMenuOpen(false)}>
             <FaShoppingCart />
           </NavLink>
-          <NavLink to="#" className="icon" onClick={() => setMenuOpen(false)}>
+          <NavLink to="/Notifications" className="icon" onClick={() => setMenuOpen(false)}>
             <IoNotifications />
           </NavLink>
         </div>
