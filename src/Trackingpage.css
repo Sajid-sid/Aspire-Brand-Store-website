@@ -1,0 +1,174 @@
+/* --- Page Container --- */
+.tracking-container {
+    max-width: 650px;
+    margin: 25px auto;
+    padding: 18px;
+    font-family: "Poppins", sans-serif;
+    color: #333;
+}
+
+/* Title */
+.tracking-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+/* --- Truck Animation Box --- */
+.truck-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.truck-gif {
+    width: 180px;
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* --- Order Info Card --- */
+.order-info {
+    background: linear-gradient(to right, #ffffff, #f8f8f8);
+    padding: 18px;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(241, 166, 69, 0.89);
+    margin-bottom: 48px;
+}
+
+.order-info h3 {
+    margin: 0 0 8px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.order-info p {
+    margin: 5px 0;
+    font-size: 15px;
+}
+
+.active {
+    color: #0c9c3f;
+    font-weight: 600;
+}
+
+.pending {
+    color: #ff9800;
+    font-weight: 600;
+}
+
+.cancelled {
+    color: #e53935;
+    font-weight: 600;
+}
+
+/* --- Map Box --- */
+.map-box {
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    margin-bottom: 25px;
+}
+
+.map-box img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.map-text {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #444;
+    font-weight: 500;
+}
+
+/* --- Timeline Tracking --- */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    position: relative;
+    padding-left: 25px;
+}
+
+/* Vertical Line */
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: #dcdcdc;
+    border-radius: 10px;
+}
+
+/* Steps */
+.step {
+    position: relative;
+    padding: 12px 15px;
+    background: #f7f7f7;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 500;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Step dot */
+.step::before {
+    content: "";
+    position: absolute;
+    left: -18px;
+    top: 16px;
+    width: 12px;
+    height: 12px;
+    background: #ccc;
+    border-radius: 50%;
+}
+
+/* Completed Step */
+.completed {
+    background: #e6ffe9;
+    color: #0a7f28;
+}
+
+.completed::before {
+    background: #0a7f28;
+    box-shadow: 0 0 6px rgba(10, 127, 40, 0.6);
+}
+
+/* Current Step */
+.current {
+    background: #fff5d6;
+    color: #d9a100;
+}
+
+.current::before {
+    background: #d9a100;
+    box-shadow: 0 0 6px rgba(217, 161, 0, 0.6);
+}
+
+/* Pending */
+.pending {
+    background: #f0f0f0;
+    opacity: 0.7;
+}
+
+.pending::before {
+    background: #aaaaaa;
+}

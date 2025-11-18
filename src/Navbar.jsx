@@ -91,11 +91,15 @@ useEffect(() => {
           <NavLink to="/Login" className="icon" onClick={() => setMenuOpen(false)}>
             <FaUser />
           </NavLink>
+
+
           <NavLink to="/Cartpage" className="icon cart-icon" onClick={() => setMenuOpen(false)}>
   <FaShoppingCart />
   {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
 </NavLink>
-          <NavLink to="#" className="icon" onClick={() => setMenuOpen(false)}>
+
+          <NavLink to="/Notifications" className="icon" onClick={() => setMenuOpen(false)}>
+
             <IoNotifications />
           </NavLink>
         </div> 
