@@ -1,39 +1,37 @@
 import React from "react";
-import "./Payments.css"; // optional stylesheet
+import { useLocation } from "react-router-dom";
+import "./Payments.css";
 
-export default function Payments({ item }) {
-  if (!item) {
-    return (
-      <div className="payment-page">
-        <h2>No item selected for payment</h2>
-      </div>
-    );
+export default function Payments() {
+  const location = useLocation();
+  const items = location.state?.items || [];
+  const total = location.state?.total || 0;
+
+  if (items.length === 0) {
+    return <h2>No items found for payment</h2>;
   }
 
   return (
     <div className="payment-page">
-      <div className="payment-card">
-        <h2>Proceed to Payment</h2>
+      <h2>Order Summary</h2>
 
-        <img src={item.img} alt={item.name} className="payment-img" />
-
-        <h3>{item.name}</h3>
-        <p className="brand">{item.brand}</p>
-
-        <p className="price">Price: ₹{item.price}</p>
-        <p className="qty">Quantity: {item.qty}</p>
-
-        <h3 className="total">Total Amount: ₹{item.price * item.qty}</h3>
-
-        <button className="pay-btn" onClick={() => handlePay(item)}>
-          Pay Now
-        </button>
+      <div className="payment-items">
+        {items.map((item, index) => (
+          <div key={index} className="payment-card">
+            <img src={item.img} alt={item.name} className="payment-img" />
+            <div>
+              <h3>{item.name}</h3>
+              <p>Brand: {item.brand}</p>
+              <p>Price: ₹{item.price}</p>
+              <p>Quantity: {item.qty}</p>
+            </div>
+          </div>
+        ))}
       </div>
+
+      <h2 className="payment-total">Total Amount: ₹{total}</h2>
+
+      <button className="pay-btn">Pay Now</button>
     </div>
   );
 }
-
-// Dummy payment function (you can connect Razorpay later)
-const handlePay = (item) => {
-  alert(`Payment started for: ${item.name}`);
-};

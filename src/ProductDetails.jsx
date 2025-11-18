@@ -167,7 +167,7 @@ export default function ProductDetails() {
                 className="pd-buy"
                 onClick={() => {
                   handleAddToCart();
-                  navigate("/checkout");
+                  navigate("/Payments");
                 }}
               >
                 Buy Now
