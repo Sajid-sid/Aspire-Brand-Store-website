@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import {
   IoSearchOutline,
@@ -12,27 +12,6 @@ import "./Navbar.css";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [cartCount, setCartCount] = useState(0);
-  // Load cart count on mount
-useEffect(() => {
-  const items = JSON.parse(localStorage.getItem("cartItems")) || [];
-  const count = items.reduce((sum, item) => sum + item.qty, 0);
-  setCartCount(count);
-}, []);
-
-// Update when cart changes
-useEffect(() => {
-  const updateCount = () => {
-    const items = JSON.parse(localStorage.getItem("cartItems")) || [];
-    const count = items.reduce((sum, item) => sum + item.qty, 0);
-    setCartCount(count);
-  };
-
-  window.addEventListener("cartUpdated", updateCount);
-  return () => window.removeEventListener("cartUpdated", updateCount);
-}, []);
-
-
 
   return (
     <nav className={`navbar ${menuOpen ? "open" : ""}`}>
@@ -91,14 +70,13 @@ useEffect(() => {
           <NavLink to="/Login" className="icon" onClick={() => setMenuOpen(false)}>
             <FaUser />
           </NavLink>
-          <NavLink to="/Cartpage" className="icon cart-icon" onClick={() => setMenuOpen(false)}>
-  <FaShoppingCart />
-  {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
-</NavLink>
-          <NavLink to="#" className="icon" onClick={() => setMenuOpen(false)}>
+          <NavLink to="/Cartpage" className="icon" onClick={() => setMenuOpen(false)}>
+            <FaShoppingCart />
+          </NavLink>
+          <NavLink to="/Notifications" className="icon" onClick={() => setMenuOpen(false)}>
             <IoNotifications />
           </NavLink>
-        </div> 
+        </div>
       </div>
     </nav>
   );
