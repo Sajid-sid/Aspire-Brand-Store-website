@@ -14,52 +14,76 @@ import Ear1 from './assets/ear1.webp';
 import Ear2 from './assets/ear2.webp';
 
 const Necklace = [
-    { id: 1, name: "Green Emerald Rose Gold Necklace", 
-        actualPrice: 1999, 
-        price: 150, 
-        image: Rednecklace },
-    { id: 2, name: "Blue Square Pendant Necklace",
-         actualPrice: 1200,
-          price: 199, 
-          image: Bluenecklace },
-    { id: 3, name: "Oval Emerald Pendant Necklace", 
-        actualPrice: 1990, 
-        price: 199, 
-        image: Necklaces },
-    { id: 4, name: "Black rectangle Pendant Necklace", 
-        actualPrice: 1200, 
-        price: 165, 
-        image: Rednecklace },
-    { id: 5, name: "Multi Butterfly Layer Necklace", 
-        actualPrice: 1190, 
-        price: 201, 
-        image: Ear1 },
-    { id: 6, name: "Multi Butterfly Layer Necklace",
-         actualPrice: 1190,
-          price: 201, 
-          image: Neck1 },
-    { id: 7, name: "Good Stylish Earings",
-         actualPrice: 1290,
-          price: 165, image: Ear1 },
-    { id: 8, name: "Leopard Face Earring and Necklace",
-         actualPrice: 1290, 
-         price: 189, image: Neck2 },
-    { id: 9, name: "Face Earring and Necklace", 
-        actualPrice: 890, 
-        price: 201, 
-        image: Neck3 },
-    { id: 10, name: "Necklace with Elegent style", 
+    {
+        id: 1, name: "Green Emerald Rose Gold Necklace",
+        actualPrice: 1999,
+        price: 150,
+        image: Rednecklace
+    },
+    {
+        id: 2, name: "Blue Square Pendant Necklace",
+        actualPrice: 1200,
+        price: 199,
+        image: Bluenecklace
+    },
+    {
+        id: 3, name: "Oval Emerald Pendant Necklace",
+        actualPrice: 1990,
+        price: 199,
+        image: Necklaces
+    },
+    {
+        id: 4, name: "Black rectangle Pendant Necklace",
+        actualPrice: 1200,
+        price: 165,
+        image: Rednecklace
+    },
+    {
+        id: 5, name: "Multi Butterfly Layer Necklace",
+        actualPrice: 1190,
+        price: 201,
+        image: Ear1
+    },
+    {
+        id: 6, name: "Multi Butterfly Layer Necklace",
+        actualPrice: 1190,
+        price: 201,
+        image: Neck1
+    },
+    {
+        id: 7, name: "Good Stylish Earings",
+        actualPrice: 1290,
+        price: 165, image: Ear1
+    },
+    {
+        id: 8, name: "Leopard Face Earring and Necklace",
+        actualPrice: 1290,
+        price: 189, image: Neck2
+    },
+    {
+        id: 9, name: "Face Earring and Necklace",
+        actualPrice: 890,
+        price: 201,
+        image: Neck3
+    },
+    {
+        id: 10, name: "Necklace with Elegent style",
         actualPrice: 990,
-         price: 201,
-         image: Neck4 },
-    { id: 11, name: "Elegent round pendent Necklace", 
-        actualPrice: 1990, 
-        price: 201, 
-        image: Neck5 },
-    { id: 12, name: "Earrings with simple style", 
+        price: 201,
+        image: Neck4
+    },
+    {
+        id: 11, name: "Elegent round pendent Necklace",
+        actualPrice: 1990,
+        price: 201,
+        image: Neck5
+    },
+    {
+        id: 12, name: "Earrings with simple style",
         actualPrice: 1089,
-         price: 190,
-          image: Ear2 }
+        price: 190,
+        image: Ear2
+    }
 ];
 
 const Addcart = () => {
