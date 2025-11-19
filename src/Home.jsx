@@ -12,6 +12,7 @@ import MobileImage2 from './images/Mobileview2.png';
 import './Home.css';
 import PopUp from './PopUp';
 import Navbar from './Navbar';
+import WhatsappButton from './WhatsappButton';
 
  
 export const Home = () => {
@@ -86,6 +87,8 @@ export const Home = () => {
         <img src={Banner2} alt="Product 2" />
         <img src={Banner3} alt="Product 3" />
       </div>
+               
+              <WhatsappButton />
 
       <div className="marquee-container">
         <marquee behavior="scroll" direction="left" scrollamount="9" className="marquee-text">
