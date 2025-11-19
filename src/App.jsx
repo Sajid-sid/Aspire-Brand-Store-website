@@ -12,10 +12,10 @@ import Component from "./Component";
 import Navbar from "./Navbar";
 import Home from "./Home";
 import HomeItems from "./HomeItems";
-import OffersPage from "./Offerspage";
-import Notifications from './Notifications'
+import OffersPage from "./OffersPage";
+import Notifications from "./Notifications";
+import Tracking from "./TrackingPage";
 import "./App.css";
-
 
 function App() {
   return (
@@ -37,26 +37,39 @@ function App() {
           <Route path="/Bracelets" element={<Bracelets />} />
           <Route path="/Cartpage" element={<Cartpage />} />
           <Route path="/offers" element={<OffersPage />} />
-          <Route path="/Notifications" element={<Notifications/>} />
-          <Route path="/Home" element={<>
-            <Home />
-            <HomeItems />
-          </>} />
 
-          <Route path="/" element={
-            <>
-               <Home />
-              <HomeItems />
+          {/* Notifications Page */}
+          <Route path="/Notifications" element={<Notifications />} />
 
-            </>
-          } />
+          {/* Tracking Page */}
+          <Route path="/Trackingpage" element={<Tracking />} />
 
+          {/* Home Route */}
+          <Route
+            path="/Home"
+            element={
+              <>
+                <Home />
+                <HomeItems />
+              </>
+            }
+          />
 
-
+          {/* Default Route (Landing Page) */}
+          <Route
+            path="/"
+            element={
+              <>
+                <Home />
+                <HomeItems />
+              </>
+            }
+          />
 
         </Routes>
       </Router>
     </>
   );
 }
+
 export default App;
