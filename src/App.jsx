@@ -12,13 +12,10 @@ import Component from "./Component";
 import Navbar from "./Navbar";
 import Home from "./Home";
 import HomeItems from "./HomeItems";
-import OffersPage from "./OffersPage";   // Keep this correct filename
 import OffersPage from "./Offerspage";
 import Notifications from "./Notifications";
-
-import Tracking from './Trackingpage';
-
 import Tracking from "./Trackingpage";
+import Payments from "./Payments";   // Added from your merge
 
 import "./App.css";
 
@@ -32,7 +29,6 @@ function App() {
 
         <Routes>
 
-          {/* Main Components */}
           {/* Main Routes */}
           <Route path="/ProductCard" element={<ProductCard />} />
           <Route path="/Login" element={<Login />} />
@@ -44,7 +40,7 @@ function App() {
           <Route path="/Bracelets" element={<Bracelets />} />
           <Route path="/Cartpage" element={<Cartpage />} />
 
-          {/* Offers Page */}
+          {/* Offers */}
           <Route path="/offers" element={<OffersPage />} />
 
           {/* Notifications */}

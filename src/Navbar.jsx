@@ -14,7 +14,6 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [cartCount, setCartCount] = useState(0);
 
-  // 🔥 Load cart count whenever cart updates
   // Load cart count whenever cart updates
   useEffect(() => {
     const updateCartCount = () => {
@@ -58,6 +57,7 @@ const Navbar = () => {
           <NavLink to="/Earrings" onClick={() => setMenuOpen(false)}>Earrings</NavLink>
           <NavLink to="/About" onClick={() => setMenuOpen(false)}>AboutUs</NavLink>
           <NavLink to="/Contact" onClick={() => setMenuOpen(false)}>ContactUs</NavLink>
+          <NavLink to="/TrackOrder" onClick={() => setMenuOpen(false)}>TrackOrder</NavLink>
         </div>
 
         {/* Search Bar */}
