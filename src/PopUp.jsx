@@ -21,7 +21,7 @@ export default function PopUp() {
 
   const goToOffers = () => {
     setShowPopup(false);
-    navigate("/offers"); // 👉 your route for offer page
+    navigate("/offers1"); // 👉 your route for offer page
   };
 
   return (

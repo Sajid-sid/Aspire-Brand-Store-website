@@ -14,7 +14,7 @@ import Home from "./Home";
 import HomeItems from "./HomeItems";
 import OffersPage from "./OffersPage";
 import Notifications from "./Notifications";
-import Tracking from "./TrackingPage";
+import Tracking from "./Trackingpage";
 import "./App.css";
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
           <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/Bracelets" element={<Bracelets />} />
           <Route path="/Cartpage" element={<Cartpage />} />
-          <Route path="/offers" element={<OffersPage />} />
+          <Route path="/offers1" element={<OffersPage />} />
 
           {/* Notifications Page */}
           <Route path="/Notifications" element={<Notifications />} />
