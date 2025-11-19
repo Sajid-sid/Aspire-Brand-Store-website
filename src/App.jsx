@@ -17,6 +17,7 @@ import Notifications from './Notifications'
 
 import Tracking from './Trackingpage';
 
+import Tracking from './Trackingpage';
 import "./App.css";
 
 
