@@ -1,37 +1,38 @@
 import React from "react";
 import "./Notifications.css";
 import { NavLink } from "react-router-dom";
-
 const Notifications = () => {
+    const notifications = [
 
-  const notifications = [
-    {
-      id: 1,
-      type: "order",
-      title: "Order Shipped",
-      message: "Your order #12345 has been shipped",
-      time: "2 hrs ago",
-      icon: "🚚",
-    },
-    {
-      id: 2,
-      type: "offer",
-      title: "New Offer",
-      message: "Flat 30% OFF on Gold Chains",
-      time: "5 hrs ago",
-      icon: "🏷️",
-    },
-    {
-      id: 3,
-      type: "wishlist",
-      title: "Price Drop",
-      message: "Price dropped for Necklace Collection",
-      time: "1 day ago",
-      icon: "💖",
-    }
-  ];
+  {
+    id: 1,
+    type: "order",
+    title: "Order Shipped",
+    message: "Your order #12345 has been shipped",
+    time: "2 hrs ago",
+    icon: "🚚",
+  },
+  {
+    id: 2,
+    type: "offer",
+    title: "New Offer",
+    message: "Flat 30% OFF on Gold Chains",
+    time: "5 hrs ago",
+    icon: "🏷️",
+  },
+  {
+    id: 3,
+    type: "wishlist",
+    title: "Price Drop",
+    message: "Price dropped for Necklace Collection",
+    time: "1 day ago",
+    icon: "💖",
+  }
+];
 
-  return (
+
+  return ( 
+
     <div className="notification-container">
       <h2 className="messages">Notifications ✨</h2>
 
@@ -50,6 +51,8 @@ const Notifications = () => {
       </div>
     </div>
   );
+
+
 };
 
 export default Notifications;

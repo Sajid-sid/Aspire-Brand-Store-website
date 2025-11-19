@@ -14,7 +14,10 @@ import Home from "./Home";
 import HomeItems from "./HomeItems";
 import OffersPage from "./OffersPage";   // Keep this correct filename
 import Notifications from "./Notifications";
-import Tracking from "./Trackingpage";
+
+import Tracking from './Trackingpage';
+
+
 
 import "./App.css";
 
@@ -48,16 +51,24 @@ function App() {
           {/* Tracking Page */}
           <Route path="/Trackingpage" element={<Tracking />} />
 
-          {/* Home Page */}
-          <Route
-            path="/Home"
-            element={
-              <>
-                <Home />
-                <HomeItems />
-              </>
-            }
-          />
+
+          <Route path="/Notifications" element={<Notifications/>} />
+          <Route path="/TrackOrder" element={<Tracking />} />
+          <Route path="/Home" element={<>
+            <Home />
+            <HomeItems />
+          </>} />
+
+          <Route path="/" element={
+            <>
+              <Home />
+              <HomeItems />
+
+            </>
+          } />
+
+
+
 
           {/* Default Landing Page */}
           <Route
