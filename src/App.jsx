@@ -17,7 +17,7 @@ import Notifications from './Notifications'
 
 import Tracking from './Trackingpage';
 
-import Tracking from './Trackingpage';
+
 import "./App.css";
 
 
@@ -51,7 +51,7 @@ function App() {
           <Route path="/Trackingpage" element={<Tracking />} />
 
           <Route path="/Notifications" element={<Notifications/>} />
-          <Route path="/Tracking" element={<Tracking />} />
+          <Route path="/TrackOrder" element={<Tracking />} />
           <Route path="/Home" element={<>
             <Home />
             <HomeItems />
