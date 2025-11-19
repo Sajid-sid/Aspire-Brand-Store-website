@@ -15,6 +15,7 @@ const Navbar = () => {
   const [cartCount, setCartCount] = useState(0);
 
   // 🔥 Load cart count whenever cart updates
+  // Load cart count whenever cart updates
   useEffect(() => {
     const updateCartCount = () => {
       const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
@@ -22,11 +23,9 @@ const Navbar = () => {
       setCartCount(totalQty);
     };
 
-    updateCartCount(); // initial load
+    updateCartCount();
 
-    // Listen for cart updates triggered by CartPage / ProductDetails
     window.addEventListener("cartUpdated", updateCartCount);
-
     return () => {
       window.removeEventListener("cartUpdated", updateCartCount);
     };
@@ -36,12 +35,12 @@ const Navbar = () => {
     <nav className={`navbar ${menuOpen ? "open" : ""}`}>
       <div className="nav-container">
 
-        {/* ===== Logo ===== */}
+        {/* Logo */}
         <NavLink className="logo" to="/Home" onClick={() => setMenuOpen(false)}>
           <img src={logo} alt="logo" />
         </NavLink>
 
-        {/* ===== Hamburger ===== */}
+        {/* Hamburger */}
         <button
           className="hamburger"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -50,7 +49,7 @@ const Navbar = () => {
           {menuOpen ? <IoClose size={24} /> : <IoMenu size={24} />}
         </button>
 
-        {/* ===== Nav Links ===== */}
+        {/* Nav Links */}
         <div className={`nav-links ${menuOpen ? "active" : ""}`}>
           <NavLink to="/Home" onClick={() => setMenuOpen(false)}>Home</NavLink>
           <NavLink to="/Necklaces" onClick={() => setMenuOpen(false)}>Necklaces</NavLink>
@@ -59,32 +58,30 @@ const Navbar = () => {
           <NavLink to="/Earrings" onClick={() => setMenuOpen(false)}>Earrings</NavLink>
           <NavLink to="/About" onClick={() => setMenuOpen(false)}>AboutUs</NavLink>
           <NavLink to="/Contact" onClick={() => setMenuOpen(false)}>ContactUs</NavLink>
-          <NavLink to="/Trackingpage" onClick={() => setMenuOpen(false)}>TrackOrder</NavLink>
         </div>
 
-        {/* ===== Search Bar ===== */}
+        {/* Search Bar */}
         <div className="search-bar">
           <input type="text" placeholder="Search products..." />
           <IoSearchOutline className="search-icon" />
         </div>
 
-        {/* ===== Right Icons ===== */}
+        {/* Right Icons */}
         <div className="icon-group">
 
+          {/* User */}
           <NavLink to="/Login" className="icon" onClick={() => setMenuOpen(false)}>
             <FaUser />
           </NavLink>
 
-
-
+          {/* Cart */}
           <NavLink to="/Cartpage" className="icon cart-icon" onClick={() => setMenuOpen(false)}>
-  <FaShoppingCart />
-  {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
-</NavLink>
+            <FaShoppingCart />
+            {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
+          </NavLink>
 
+          {/* Notifications */}
           <NavLink to="/Notifications" className="icon" onClick={() => setMenuOpen(false)}>
-
-
             <IoNotifications />
           </NavLink>
         </div>
