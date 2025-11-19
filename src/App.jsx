@@ -49,6 +49,8 @@ function App() {
 
           <Route path="/Trackingpage" element={<Tracking />} />
 
+          <Route path="/Notifications" element={<Notifications/>} />
+          <Route path="/Tracking" element={<Tracking />} />
           <Route path="/Home" element={<>
             <Home />
             <HomeItems />
