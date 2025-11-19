@@ -2,7 +2,7 @@ import React from "react";
 import ProductNecklace from './images/ProductNecklace.webp';
 import ProductBracelet from './images/ProductBracelet.avif';
 import ProductRing from './images/ProductRing.avif';
-import "./OffersPage.css";
+import "./Offerspage.css";
 
 export default function OffersPage() {
     const offerProducts = [

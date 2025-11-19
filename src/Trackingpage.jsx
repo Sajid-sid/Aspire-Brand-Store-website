@@ -1,6 +1,6 @@
 
 import React from "react";
-import "./TrackingPage.css";
+import "./Trackingpage.css";
 import truckGif from "./images/Truck.gif";
 
 const TrackingPage = () => {
