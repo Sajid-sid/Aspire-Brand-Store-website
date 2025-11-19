@@ -75,13 +75,16 @@ const Navbar = () => {
             <FaUser />
           </NavLink>
 
-          {/* 🛒 Cart with Dynamic Count */}
+
+
           <NavLink to="/Cartpage" className="icon cart-icon" onClick={() => setMenuOpen(false)}>
-            <FaShoppingCart />
-            {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
-          </NavLink>
+  <FaShoppingCart />
+  {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
+</NavLink>
 
           <NavLink to="/Notifications" className="icon" onClick={() => setMenuOpen(false)}>
+
+
             <IoNotifications />
           </NavLink>
         </div>

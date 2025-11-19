@@ -1,9 +1,11 @@
 // CartPage.js
 import React, { useEffect, useState } from "react";
 import "./Cartpage.css";
+import { useNavigate } from "react-router-dom";
 
 export default function CartPage() {
   const [cartItems, setCartItems] = useState([]);
+  const navigate = useNavigate();
 
   // Load cart initially
   useEffect(() => {
@@ -22,7 +24,7 @@ export default function CartPage() {
     return () => window.removeEventListener("cartUpdated", updateCart);
   }, []);
 
-  // ⭐ Increase quantity
+  // Increase quantity
   const incrementQty = (id) => {
     const updated = cartItems.map((item) =>
       item.id === id ? { ...item, qty: item.qty + 1 } : item
@@ -32,13 +34,13 @@ export default function CartPage() {
     window.dispatchEvent(new Event("cartUpdated"));
   };
 
-  // ⭐ Decrease quantity
+  // Decrease quantity
   const decrementQty = (id) => {
     const updated = cartItems
       .map((item) => {
         if (item.id === id) {
           if (item.qty > 1) return { ...item, qty: item.qty - 1 };
-          return null; // remove if qty becomes 0
+          return null;
         }
         return item;
       })
@@ -49,7 +51,7 @@ export default function CartPage() {
     window.dispatchEvent(new Event("cartUpdated"));
   };
 
-  // ⭐ Remove item
+  // Remove item
   const handleRemove = (id) => {
     const updated = cartItems.filter((item) => item.id !== id);
     setCartItems(updated);
@@ -57,12 +59,27 @@ export default function CartPage() {
     window.dispatchEvent(new Event("cartUpdated"));
   };
 
-  // ⭐ Proceed to Payment (individual)
-  const handlePayment = (item) => {
-    alert(`Proceeding to payment for: ${item.name}`);
+  // ⭐ Proceed to Payment (navigate to Payments page)
+  const handleCheckout = () => {
+    if (cartItems.length === 0) {
+      alert("Your cart is empty!");
+      return;
+    }
+
+    navigate("/payments", {
+      state: {
+        items: cartItems,
+        total: totalPrice,
+      },
+    });
   };
 
-  // ⭐ Total Price
+  // ⭐ Single item payment (optional)
+  const handlePayment = (item) => {
+    navigate("/payments", { state: { items: [item], total: item.price * item.qty } });
+  };
+
+  // Total Price
   const totalPrice = cartItems.reduce(
     (sum, item) => sum + item.price * item.qty,
     0
@@ -118,7 +135,9 @@ export default function CartPage() {
 
           <div className="cart-summary">
             <h3>Total: ₹{totalPrice.toFixed(2)}</h3>
-            <button className="checkout-btn">Proceed to Checkout</button>
+            <button className="checkout-btn" onClick={handleCheckout}>
+              Proceed to Checkout
+            </button>
           </div>
         </>
       )}

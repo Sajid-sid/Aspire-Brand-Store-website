@@ -1,0 +1,96 @@
+/* ====== Payment Page Main Layout ====== */
+.payment-page {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.payment-page h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* ====== Order Items Container ====== */
+.payment-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ====== Individual Item Box ====== */
+.payment-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.payment-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+}
+
+/* ====== Texts ====== */
+.payment-card h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #222;
+}
+
+.payment-card p {
+  margin: 3px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* ====== Total Price ====== */
+.payment-total {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 26px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* ====== Pay Now Button ====== */
+.pay-btn {
+  display: block;
+  margin: 30px auto 0;
+  padding: 12px 28px;
+  background: #d4a017;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.pay-btn:hover {
+  background: #bb8b12;
+  transform: scale(1.05);
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 600px) {
+  .payment-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .payment-img {
+    width: 150px;
+    height: 150px;
+  }
+}

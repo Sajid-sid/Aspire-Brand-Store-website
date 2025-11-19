@@ -12,9 +12,10 @@ import Component from "./Component";
 import Navbar from "./Navbar";
 import Home from "./Home";
 import HomeItems from "./HomeItems";
-import OffersPage from "./OffersPage";
+import OffersPage from "./OffersPage";   // Keep this correct filename
 import Notifications from "./Notifications";
 import Tracking from "./Trackingpage";
+
 import "./App.css";
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
 
         <Routes>
 
+          {/* Main Components */}
           <Route path="/ProductCard" element={<ProductCard />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Necklaces" element={<Necklaces />} />
@@ -36,7 +38,9 @@ function App() {
           <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/Bracelets" element={<Bracelets />} />
           <Route path="/Cartpage" element={<Cartpage />} />
-          <Route path="/offers1" element={<OffersPage />} />
+
+          {/* Offers Page */}
+          <Route path="/offers" element={<OffersPage />} />
 
           {/* Notifications Page */}
           <Route path="/Notifications" element={<Notifications />} />
@@ -44,7 +48,7 @@ function App() {
           {/* Tracking Page */}
           <Route path="/Trackingpage" element={<Tracking />} />
 
-          {/* Home Route */}
+          {/* Home Page */}
           <Route
             path="/Home"
             element={
@@ -55,7 +59,7 @@ function App() {
             }
           />
 
-          {/* Default Route (Landing Page) */}
+          {/* Default Landing Page */}
           <Route
             path="/"
             element={
@@ -72,6 +76,4 @@ function App() {
   );
 }
 
-
 export default App;
-

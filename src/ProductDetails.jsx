@@ -149,7 +149,12 @@ export default function ProductDetails() {
               {/* ✅ Now goes directly to payment */}
               <button
                 className="pd-buy"
-                onClick={() => navigate("/Payment")}
+
+                onClick={() => {
+                  handleAddToCart();
+                  navigate("/Payments");
+                }}
+
               >
                 Buy Now
               </button>
