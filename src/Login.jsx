@@ -90,9 +90,10 @@ export default function Login() {
           {/* Profile Fields */}
           <div className="form-section">
             {/* Full Name */}
-            <div className="form-group">
+            <div className="fields">
               <label>Full Name:</label>
               <input
+
                 type="text"
                 placeholder="Enter your full name"
                 value={fullName}
@@ -101,34 +102,37 @@ export default function Login() {
             </div>
 
             {/* Phone Number */}
-            <div className="form-group">
-              <label>Phone Number:</label>
+            <div className="fields">
+              <label className="phones">Phone Number:</label>
               <div className="phone-input">
                 <span className="country-code">+91</span>
                 <input
+
                   type="text"
                   placeholder="Enter phone number"
                   value={phone}
                   onChange={(e) => validatePhone(e.target.value)}
                 />
               </div>
-              {phoneError && <p className="error-text">{phoneError}</p>}
+              {phoneError && <p className="error">{phoneError}</p>}
             </div>
+          </div>
 
-            {/* Email */}
-            <div className="form-group">
-              <label>Email:</label>
-              <input
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => validateEmail(e.target.value)}
-              />
-              {emailError && <p className="error-text">{emailError}</p>}
-            </div>
+          {/* Email */}
+          <div className="mail-data">
+            <label>Email:</label>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => validateEmail(e.target.value)}
+            />
+            {emailError && <p className="error-text">{emailError}</p>}
+          </div>
 
-            {/* Password */}
-            <div className="form-group">
+          {/* Password */}
+          <div className="passwrd">
+            <div className="confirm-purpose">
               <label>Password:</label>
               <input
                 type="password"
@@ -141,8 +145,9 @@ export default function Login() {
               />
             </div>
 
+
             {/* Confirm Password */}
-            <div className="form-group">
+            <div className="confirm-purpose">
               <label>Confirm Password:</label>
               <input
                 type="password"
@@ -155,15 +160,16 @@ export default function Login() {
               />
               {passwordError && <p className="error-text">{passwordError}</p>}
             </div>
-
-            {/* Save Button */}
-           
           </div>
-           <button onClick={handleSave} className="save-btn">
-              Save Profile
-            </button>
+
+          {/* Save Button */}
+
+
+          <button onClick={handleSave} className="save-btn">
+            Save Profile
+          </button>
         </div>
-        
+
       </div>
     </>
   );

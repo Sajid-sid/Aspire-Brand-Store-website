@@ -1,6 +1,6 @@
 .necklaces-page h2 {
   text-align: center;
-  padding:0px ;
+  padding: 0px;
   background-color: #fdfdfd;
   margin-top: 0px;
 }
@@ -10,7 +10,7 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
- 
+
 }
 
 .product-card {
@@ -55,7 +55,7 @@
 }
 
 button {
-  background-color: #007bff;
+  background-color: #c1a37f;
   border: none;
   color: white;
   padding: 8px 15px;
@@ -65,9 +65,8 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #970c10;
 }
-
 
 
 
@@ -78,7 +77,7 @@ button:hover {
   padding: 25px;
   margin-top: 40px;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   width: px;
 }
 
@@ -109,7 +108,7 @@ button:hover {
   width: 100%;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -124,9 +123,3 @@ button:hover {
 .upi-id strong {
   color: #d81b60;
 }
-
-
-
-
-
-

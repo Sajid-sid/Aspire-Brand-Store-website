@@ -25,16 +25,25 @@ const TrackingPage = () => {
             </div>
 
             {/* MAP SECTION */}
+
             <div className="map-box">
-                <img
-                    src="https://via.placeholder.com/500x250"
-                    alt="map"
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.096609824811!2d78.4770754750791!3d17.443239383942746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91cfa64620af%3A0x77e498cab170fc7a!2sAspire%20Tekhub%20Solutions%20Pvt%20Limited!5e0!3m2!1sen!2sin!4v1732017431103!5m2!1sen!2sin"
+                    width="500"
+                    height="250"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
                     className="map-img"
-                />
+                ></iframe>
+
                 <p className="map-text">
-                    Current Location: <strong>Hyderabad Distribution Center</strong>
+                    Current Location: <strong>Aspire Tekhub Solutions Pvt Ltd</strong>
                 </p>
             </div>
+
+
 
             {/* TIMELINE SECTION */}
             <div className="timeline">

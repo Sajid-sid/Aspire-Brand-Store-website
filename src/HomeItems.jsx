@@ -13,6 +13,8 @@ import Neck5 from './assets/neck5.webp';
 import Ear1 from './assets/ear1.webp';
 import Ear2 from './assets/ear2.webp';
 
+import Payments from './images/payments accepted.PNG';
+
 const Necklace = [
     {
         id: 1, name: "Green Emerald Rose Gold Necklace",
@@ -161,8 +163,13 @@ const Addcart = () => {
                         </div>
 
                     </li>
+
                 ))}
             </ul>
+            {/* ⭐ Display Payments Image Here */}
+            <div className="payments-container">
+                <img src={Payments} alt="Payments Accepted" className="payments-img" />
+            </div>
 
             {/* ⭐ Popup */}
             {showPopup && (
@@ -171,6 +178,7 @@ const Addcart = () => {
                         <p>{popupMessage}</p>
                     </div>
                 </div>
+
             )}
         </>
     );

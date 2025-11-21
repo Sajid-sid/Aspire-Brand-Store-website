@@ -1,137 +1,196 @@
+/* ===========================
+   Overall Page Styling
+=========================== */
 .profile-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    background-color: oklab(75.63499999999999% -0.03567 -0.09678);
-    font-family: "Poppins", sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom right, #fdfdfd, #f5f3e8);
+  padding: 20px;
 }
 
+/* ===========================
+   Card Styling
+=========================== */
 .profile-card {
-    background: #ffffff;
-    padding: 10px;
-    border-radius: 20px;
-    width: 380px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    margin-top: 40px;
+  background: #ffffff;
+  width: 700px;
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  transition: 0.3s ease-in-out;
 }
 
+
+/* ===========================
+   Logo Section
+=========================== */
 .logo-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 5px;
+  text-align: center;
+  margin-top: -20px;
 }
 
 .logo {
-    width: 200px;
-    height: auto;
-    margin-bottom: 10px;
-    align-items: center;
-    margin-left: 0px;
+  width: 130px;
 }
 
 .brand-name {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: #222;
+  margin-top: 5px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #970c10;
+  margin-left: 10px;
 }
 
+/* ===========================
+   Two Column Layout
+=========================== */
+.form-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 25px;
+  width: 550px;
+}
+
+.fields {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===========================
+   Email (Full width)
+=========================== */
+.mail-data {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===========================
+   Password Row
+=========================== */
+.passwrd {
+  display: flex;
+  gap: 120px;
+  width: 80%;
+  margin-top: 20px;
+}
+
+.confirm-purpose {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===========================
+   Labels
+=========================== */
+label {
+  font-size: 15px;
+  font-weight: 600;
+
+}
+
+/* ===========================
+   Inputs
+=========================== */
+input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1.8px solid #d4d4d4;
+  background: #fafafa;
+  font-size: 15px;
+  outline: none;
+  transition: 0.2s;
+}
+
+input:focus {
+  border-color: #e7c873;
+  background: #fff;
+  box-shadow: 0px 0px 6px rgba(231, 200, 115, 0.4);
+}
+
+/* Phone Input Layout */
 .phone-input {
   display: flex;
   align-items: center;
+  gap: 10px;
+  width: 370px;
 }
 
 .country-code {
-  background-color: #f0f0f0;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-right: none;
-  border-radius: 8px 0 0 8px;
-  font-weight: bold;
+  padding: 12px 15px;
+  background: #e7c873;
+  color: #fff;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-left: 45px;
 }
 
-.phone-input input {
-  flex: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-left: none;
-  border-radius: 0 8px 8px 0;
+.phones {
+  margin-left: 55px;
 }
 
+/* ===========================
+   Error Messages
+=========================== */
 .error-text {
-  color: red;
+  margin-top: 5px;
   font-size: 13px;
-  margin-top: 4px;
+  color: #d9534f;
+  font-weight: 500;
 }
 
-.form-group input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #d1d1d1;
-  border-radius: 6px;
-  font-size: 14px;
-  outline: none;
-  transition: border 0.3s ease;
+.error {
+  margin-top: 5px;
+  font-size: 13px;
+  color: #d9534f;
+  font-weight: 500;
+  margin-left: 100px;
 }
 
-.form-group input[type="password"]:focus {
-  border-color: #007bff;
-  align-items: center;
-}
-
-.error-text {
-  color: red;
-  font-size: 12px;
-  
-}
-
-
-.form-section {
-    text-align: left;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    font-size: 0.9rem;
-    font-weight: 500;
-    margin-bottom: 5px;
-    color: #333;
-}
-
-.form-group input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    outline: none;
-    transition: border-color 0.3s;
-}
-
-.form-group input:focus {
-    border-color: #000;
-}
-
+/* ===========================
+   Button
+=========================== */
 .save-btn {
-    width: 40%;
-    align-items: center;
-    padding: 10px;
-    background-color:green;
-    color: white;
-    font-weight: 500;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: background 0.3s;
-    margin-top: 50px;
+  width: 16%;
+  background: black;
+  color: #fff;
+  border: none;
+  padding: 13px 0;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  display: block;
+  margin: 40px auto 0;
+  box-shadow: 0px 5px 15px rgba(231, 200, 115, 0.4);
+  transition: 0.3s;
+
 }
 
 .save-btn:hover {
-    background-color: #333;
+  background: #970c10;
+  box-shadow: 0px 6px 18px rgba(231, 200, 115, 0.6);
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   Responsive
+=========================== */
+@media (max-width: 650px) {
+
+  .form-section,
+  .passwrd {
+    flex-direction: column;
+  }
+
+  .save-btn {
+    width: 80%;
+  }
 }
