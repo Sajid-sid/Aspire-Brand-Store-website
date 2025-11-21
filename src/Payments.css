@@ -1,96 +1,195 @@
-/* ====== Payment Page Main Layout ====== */
+/* =============================
+   MAIN PAGE LAYOUT
+============================= */
 .payment-page {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 10px;
-  font-family: "Poppins", sans-serif;
+  max-width: 450px;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
 }
 
-.payment-page h2 {
+h2 {
   text-align: center;
-  font-size: 28px;
-  margin-bottom: 25px;
-  color: #333;
-}
-
-/* ====== Order Items Container ====== */
-.payment-items {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-/* ====== Individual Item Box ====== */
-.payment-card {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 18px;
-  border-radius: 12px;
-  background: #fff;
-  border: 1px solid #e0e0e0;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
-}
-
-.payment-img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 1px solid #ccc;
-}
-
-/* ====== Texts ====== */
-.payment-card h3 {
-  margin: 0;
-  font-size: 20px;
+  margin-bottom: 20px;
   color: #222;
 }
 
-.payment-card p {
+.section {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 25px;
+  width: 80%;
+ 
+}
+
+/* =============================
+   INPUT BOXES
+============================= */
+.input-box {
+  width: 75%;
+  padding: 12px;
+  margin: 8px 0;
+  font-size: 15px;
+  border: 1.8px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.input-box:focus {
+  border-color: #f39c12;
+  box-shadow: 0 0 5px #f39c12;
+}
+
+/* =============================
+   BUTTONS
+============================= */
+button {
+  cursor: pointer;
+}
+
+.next-btn,
+.back-btn,
+.location-btn,
+.pay-btn {
+  width: 65%;
+  padding: 12px;
+  margin-top: 12px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: 0.3s;
+  margin-left: 30px;
+}
+
+/* Continue Button */
+.next-btn {
+  background: #27ae60;
+  color: white;
+}
+
+.next-btn:hover {
+  background: #1e8f4a;
+}
+
+/* Back Button */
+.back-btn {
+  background: #d9534f;
+  color: white;
+}
+
+.back-btn:hover {
+  background: #c9302c;
+}
+
+/* Current Location Button */
+.location-btn {
+  background: white;
+  color: black;
+
+  
+
+ 
+}
+
+.location-btn:hover {
+  background: lightblue;
+}
+
+/* Pay Button */
+.pay-btn {
+  background: #f39c12;
+  color: white;
+}
+
+.pay-btn:hover {
+  background: #d68910;
+}
+
+/* =============================
+   MAP
+============================= */
+.map {
+  width: 80%;
+  height: 250px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+/* =============================
+   ADDRESS SUMMARY BOX
+============================= */
+.address-box {
+  background: #f8f9fa;
+  padding: 15px;
+  border-left: 5px solid #f39c12;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.address-box h4 {
+  margin-bottom: 8px;
+  color: #444;
+}
+
+.address-box p {
   margin: 3px 0;
   font-size: 14px;
   color: #555;
 }
 
-/* ====== Total Price ====== */
-.payment-total {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 26px;
-  font-weight: 600;
-  color: #1a1a1a;
+/* =============================
+   ORDER ITEMS
+============================= */
+.payment-items {
+  margin-top: 20px;
 }
 
-/* ====== Pay Now Button ====== */
-.pay-btn {
+.payment-card {
+  display: flex;
+  gap: 15px;
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.payment-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* =============================
+   PAYMENT OPTIONS
+============================= */
+.payment-options {
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.payment-options label {
   display: block;
-  margin: 30px auto 0;
-  padding: 12px 28px;
-  background: #d4a017;
-  color: white;
-  font-size: 18px;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
+  margin-bottom: 12px;
+  font-size: 16px;
   cursor: pointer;
-  transition: 0.25s ease;
 }
 
-.pay-btn:hover {
-  background: #bb8b12;
-  transform: scale(1.05);
+.card-form {
+  margin-top: 20px;
 }
 
-/* ====== Responsive ====== */
-@media (max-width: 600px) {
-  .payment-card {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .payment-img {
-    width: 150px;
-    height: 150px;
-  }
+/* =============================
+   TOTAL PRICE
+============================= */
+.payment-total {
+  text-align: right;
+  margin-top: 20px;
+  color: #2c3e50;
 }
