@@ -147,17 +147,30 @@ export default function ProductDetails() {
               </button>
 
               {/* ✅ Now goes directly to payment */}
-              <button
-                className="pd-buy"
+    <button
+  className="pd-buy"
+  onClick={() => {
+    navigate("/Payments", {
+      state: {
+        items: [
+          {
+            id: product.id,
+            name: product.name,
+            brand: product.brand,
+            img: mainImage,        // ✅ Always send correct image
+            price: product.price,
+            qty: 1,
+          }
+        ],
+        total: product.price,
+      },
+    });
+  }}
+>
+  Buy Now
+</button>
 
-                onClick={() => {
-                  handleAddToCart();
-                  navigate("/Payments");
-                }}
 
-              >
-                Buy Now
-              </button>
 
             </div>
           </div>
