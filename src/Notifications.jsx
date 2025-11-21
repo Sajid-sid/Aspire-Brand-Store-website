@@ -42,7 +42,7 @@ const Notifications = () => {
             <div className="notification-icon">{item.icon}</div>
 
             <div className="notification-content">
-              <NavLink to="/TrackingPage">{item.title}</NavLink>
+              <NavLink to="/TrackOrder">{item.title}</NavLink>
               <p>{item.message}</p>
               <span className="time">{item.time}</span>
             </div>
